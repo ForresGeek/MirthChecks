@@ -1,0 +1,82 @@
+"Name","Full Name","OID","Type","Access","Indexes","MIB Module","Description"
+"mirthcorporation",".iso.org.dod.internet.private.enterprises.mirthcorporation",".1.3.6.1.4.1.29009",,,"","MIRTH-MIB",
+"common",".iso.org.dod.internet.private.enterprises.mirthcorporation.common",".1.3.6.1.4.1.29009.1",,,"","MIRTH-MIB",
+"products",".iso.org.dod.internet.private.enterprises.mirthcorporation.products",".1.3.6.1.4.1.29009.2",,,"","MIRTH-MIB",
+"appliances",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances",".1.3.6.1.4.1.29009.2.1",,,"","MIRTH-MIB",
+"interfaces",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.interfaces",".1.3.6.1.4.1.29009.2.1.5",,,"","MIRTH-MIB",
+"ifNumber",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.interfaces.ifNumber",".1.3.6.1.4.1.29009.2.1.5.1","INTEGER32","read-only","","MIRTH-MIB","""The number of network interfaces (regardless of their
+current state) present on this system."""
+"ifTable",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.interfaces.ifTable",".1.3.6.1.4.1.29009.2.1.5.2","SEQUENCE OF IfEntry","not-accessible","","MIRTH-MIB","""A list of interface entries."""
+"ifEntry",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.interfaces.ifTable.ifEntry",".1.3.6.1.4.1.29009.2.1.5.2.1","IfEntry","not-accessible","ifIndex","MIRTH-MIB","""An interface entry containing objects at the
+subnetwork layer and below for a particular
+interface."""
+"ifIndex",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.interfaces.ifTable.ifEntry.ifIndex",".1.3.6.1.4.1.29009.2.1.5.2.1.1","INTEGER","read-only","","MIRTH-MIB","""A unique value for each interface.  Its value
+ranges between 1 and the value of ifNumber.  The
+value for each interface must remain constant at
+least from one re-initialization of the entity's
+network management system to the next re-
+initialization."""
+"ifDescr",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.interfaces.ifTable.ifEntry.ifDescr",".1.3.6.1.4.1.29009.2.1.5.2.1.2","OCTET STRING","read-only","","MIRTH-MIB","""A textual string containing information about the
+interface."""
+"ifOperStatus",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.interfaces.ifTable.ifEntry.ifOperStatus",".1.3.6.1.4.1.29009.2.1.5.2.1.3","INTEGER","read-only","","MIRTH-MIB","""The operational status of the interface."""
+"ifInOctets",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.interfaces.ifTable.ifEntry.ifInOctets",".1.3.6.1.4.1.29009.2.1.5.2.1.4","COUNTER32","read-only","","MIRTH-MIB","""The total number of octets received on the
+interface, including framing characters."""
+"ifOutOctets",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.interfaces.ifTable.ifEntry.ifOutOctets",".1.3.6.1.4.1.29009.2.1.5.2.1.5","COUNTER32","read-only","","MIRTH-MIB","""The total number of octets transmitted out of the
+interface, including framing characters."""
+"disk",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.disk",".1.3.6.1.4.1.29009.2.1.6",,,"","MIRTH-MIB",
+"dskTable",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.disk.dskTable",".1.3.6.1.4.1.29009.2.1.6.1","SEQUENCE OF DskEntry","not-accessible","","MIRTH-MIB","""Disk watching information.  Partition(s) to be
+watched."""
+"dskEntry",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.disk.dskTable.dskEntry",".1.3.6.1.4.1.29009.2.1.6.1.1","DskEntry","not-accessible","dskIndex","MIRTH-MIB","""An entry containing a disk and its statistics"""
+"dskIndex",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.disk.dskTable.dskEntry.dskIndex",".1.3.6.1.4.1.29009.2.1.6.1.1.1","INTEGER32","read-only","","MIRTH-MIB","""Integer reference number (row number) for the disk mib."""
+"dskTotal",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.disk.dskTable.dskEntry.dskTotal",".1.3.6.1.4.1.29009.2.1.6.1.1.2","INTEGER32","read-only","","MIRTH-MIB","""Total size of the disk/partition (kBytes)."""
+"dskAvail",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.disk.dskTable.dskEntry.dskAvail",".1.3.6.1.4.1.29009.2.1.6.1.1.3","INTEGER32","read-only","","MIRTH-MIB","""Available space on the disk."""
+"dskUsed",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.disk.dskTable.dskEntry.dskUsed",".1.3.6.1.4.1.29009.2.1.6.1.1.4","INTEGER32","read-only","","MIRTH-MIB","""Used space on the disk."""
+"dskPercent",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.disk.dskTable.dskEntry.dskPercent",".1.3.6.1.4.1.29009.2.1.6.1.1.5","OCTET STRING","read-only","","MIRTH-MIB","""Percentage of space used on disk."""
+"dskIOReads",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.disk.dskTable.dskEntry.dskIOReads",".1.3.6.1.4.1.29009.2.1.6.1.1.6","COUNTER32","read-only","","MIRTH-MIB","""The number of read accesses from this device since boot."""
+"dskIOWrites",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.disk.dskTable.dskEntry.dskIOWrites",".1.3.6.1.4.1.29009.2.1.6.1.1.7","COUNTER32","read-only","","MIRTH-MIB","""The number of write accesses from this device since boot."""
+"dskDescr",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.disk.dskTable.dskEntry.dskDescr",".1.3.6.1.4.1.29009.2.1.6.1.1.8","OCTET STRING","read-only","","MIRTH-MIB","""The mount point of the device."""
+"cpu",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.cpu",".1.3.6.1.4.1.29009.2.1.7",,,"","MIRTH-MIB",
+"cpuRawUser",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.cpu.cpuRawUser",".1.3.6.1.4.1.29009.2.1.7.1","INTEGER32","read-only","","MIRTH-MIB","""User CPU time."""
+"cpuRawSystem",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.cpu.cpuRawSystem",".1.3.6.1.4.1.29009.2.1.7.2","INTEGER32","read-only","","MIRTH-MIB","""System CPU time."""
+"cpuRawIdle",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.cpu.cpuRawIdle",".1.3.6.1.4.1.29009.2.1.7.3","INTEGER32","read-only","","MIRTH-MIB","""Idle CPU time."""
+"cpuLoad",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.cpu.cpuLoad",".1.3.6.1.4.1.29009.2.1.7.4","OCTET STRING","read-only","","MIRTH-MIB","""Load of the CPU."""
+"services",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.services",".1.3.6.1.4.1.29009.2.1.8",,,"","MIRTH-MIB",
+"postgresStatus",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.services.postgresStatus",".1.3.6.1.4.1.29009.2.1.8.1","INTEGER","read-only","","MIRTH-MIB","""The operational status of the postgres service."""
+"stunnelStatus",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.services.stunnelStatus",".1.3.6.1.4.1.29009.2.1.8.2","INTEGER","read-only","","MIRTH-MIB","""The operational status of the stunnel service."""
+"clusterStatus",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.services.clusterStatus",".1.3.6.1.4.1.29009.2.1.8.3","INTEGER","read-only","","MIRTH-MIB","""The operational status of the cluster service."""
+"clusterState",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.services.clusterState",".1.3.6.1.4.1.29009.2.1.8.4","OCTET STRING","read-only","","MIRTH-MIB","""Returns the state of the cluster service:active or standby."""
+"vpnStatus",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.services.vpnStatus",".1.3.6.1.4.1.29009.2.1.8.5","INTEGER","read-only","","MIRTH-MIB","""The operational status of the vpn service."""
+"sftpStatus",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.services.sftpStatus",".1.3.6.1.4.1.29009.2.1.8.6","INTEGER","read-only","","MIRTH-MIB","""The operational status of the sftp service."""
+"autoUpdateStatus",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.services.autoUpdateStatus",".1.3.6.1.4.1.29009.2.1.8.7","INTEGER","read-only","","MIRTH-MIB","""The operational status of the auto update service."""
+"consoleStatus",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.services.consoleStatus",".1.3.6.1.4.1.29009.2.1.8.8","INTEGER","read-only","","MIRTH-MIB","""The operational status of the console service."""
+"clusterRole",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.services.clusterRole",".1.3.6.1.4.1.29009.2.1.8.9","OCTET STRING","read-only","","MIRTH-MIB","""Returns the role of the cluster service:primary or backup."""
+"loadBalancingStatus",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.services.loadBalancingStatus",".1.3.6.1.4.1.29009.2.1.8.10","INTEGER","read-only","","MIRTH-MIB","""The operational status of the load balancing service."""
+"loadBalancingRole",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.services.loadBalancingRole",".1.3.6.1.4.1.29009.2.1.8.11","OCTET STRING","read-only","","MIRTH-MIB","""Returns the role of the load balancing service:primary or secondary."""
+"loadBalancingState",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.services.loadBalancingState",".1.3.6.1.4.1.29009.2.1.8.12","OCTET STRING","read-only","","MIRTH-MIB","""Returns the state of the load balancing service:director, worker, or stopped."""
+"loadBalancingConnections",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.services.loadBalancingConnections",".1.3.6.1.4.1.29009.2.1.8.13","INTEGER32","read-only","","MIRTH-MIB","""The number of connections currently being load balanced."""
+"applianceModel",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.applianceModel",".1.3.6.1.4.1.29009.2.1.1","OCTET STRING","read-only","","MIRTH-MIB","""Returns the model identifier of the Mirth Appliance"""
+"applianceDescription",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.applianceDescription",".1.3.6.1.4.1.29009.2.1.2","OCTET STRING","read-only","","MIRTH-MIB","""Returns the description of the Mirth Appliance"""
+"applianceName",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.applianceName",".1.3.6.1.4.1.29009.2.1.3","OCTET STRING","read-only","","MIRTH-MIB","""Returns the appliance name as defined by the administrator"""
+"applianceUptime",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.appliances.applianceUptime",".1.3.6.1.4.1.29009.2.1.4","TIMETICKS","read-only","","MIRTH-MIB","""The amount of time since this appliance was last
+initialized.  Note that this is different from syUpTime
+in the SNMPv2-MIB [RFC1907] because sysUpTime is the
+uptime of the network management portion of the system."""
+"applications",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications",".1.3.6.1.4.1.29009.2.2",,,"","MIRTH-MIB",
+"mirthConnect",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications.mirthConnect",".1.3.6.1.4.1.29009.2.2.1",,,"","MIRTH-MIB",
+"mirthConnectStatus",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications.mirthConnect.mirthConnectStatus",".1.3.6.1.4.1.29009.2.2.1.1",,,"","MIRTH-MIB",
+"mirthConnectTotals",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications.mirthConnect.mirthConnectTotals",".1.3.6.1.4.1.29009.2.2.1.2",,,"","MIRTH-MIB",
+"mirthConnectTotalReceived",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications.mirthConnect.mirthConnectTotals.mirthConnectTotalReceived",".1.3.6.1.4.1.29009.2.2.1.2.1",,,"","MIRTH-MIB",
+"mirthConnectTotalFiltered",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications.mirthConnect.mirthConnectTotals.mirthConnectTotalFiltered",".1.3.6.1.4.1.29009.2.2.1.2.2",,,"","MIRTH-MIB",
+"mirthConnectTotalQueued",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications.mirthConnect.mirthConnectTotals.mirthConnectTotalQueued",".1.3.6.1.4.1.29009.2.2.1.2.3",,,"","MIRTH-MIB",
+"mirthConnectTotalSent",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications.mirthConnect.mirthConnectTotals.mirthConnectTotalSent",".1.3.6.1.4.1.29009.2.2.1.2.4",,,"","MIRTH-MIB",
+"mirthConnectTotalErrored",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications.mirthConnect.mirthConnectTotals.mirthConnectTotalErrored",".1.3.6.1.4.1.29009.2.2.1.2.5",,,"","MIRTH-MIB",
+"mirthConnectChannelStatus",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications.mirthConnect.mirthConnectChannelStatus",".1.3.6.1.4.1.29009.2.2.1.3",,,"","MIRTH-MIB",
+"mirthConnectChannelStatsTable",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications.mirthConnect.mirthConnectChannelStatus.mirthConnectChannelStatsTable",".1.3.6.1.4.1.29009.2.2.1.3.1","SEQUENCE OF MirthConnectChannelEntry","not-accessible","","MIRTH-MIB","""This table contains Mirth Connect channel statistics."""
+"mirthConnectChannelEntry",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications.mirthConnect.mirthConnectChannelStatus.mirthConnectChannelStatsTable.mirthConnectChannelEntry",".1.3.6.1.4.1.29009.2.2.1.3.1.1","MirthConnectChannelEntry","not-accessible","mirthConnectChannelName","MIRTH-MIB","""A row describing a given working group"""
+"mirthConnectChannelName",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications.mirthConnect.mirthConnectChannelStatus.mirthConnectChannelStatsTable.mirthConnectChannelEntry.mirthConnectChannelName",".1.3.6.1.4.1.29009.2.2.1.3.1.1.1","OCTET STRING","read-create","","MIRTH-MIB","""The name of Mirth Connect channel."""
+"mirthConnectChannelReceived",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications.mirthConnect.mirthConnectChannelStatus.mirthConnectChannelStatsTable.mirthConnectChannelEntry.mirthConnectChannelReceived",".1.3.6.1.4.1.29009.2.2.1.3.1.1.2","INTEGER32","read-create","","MIRTH-MIB","""The number of messages this channel has received."""
+"mirthConnectChannelFiltered",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications.mirthConnect.mirthConnectChannelStatus.mirthConnectChannelStatsTable.mirthConnectChannelEntry.mirthConnectChannelFiltered",".1.3.6.1.4.1.29009.2.2.1.3.1.1.3","INTEGER32","read-create","","MIRTH-MIB","""The number of messages this channel has filtered."""
+"mirthConnectChannelQueued",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications.mirthConnect.mirthConnectChannelStatus.mirthConnectChannelStatsTable.mirthConnectChannelEntry.mirthConnectChannelQueued",".1.3.6.1.4.1.29009.2.2.1.3.1.1.4","INTEGER32","read-create","","MIRTH-MIB","""The number of messages this channel has queued."""
+"mirthConnectChannelSent",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications.mirthConnect.mirthConnectChannelStatus.mirthConnectChannelStatsTable.mirthConnectChannelEntry.mirthConnectChannelSent",".1.3.6.1.4.1.29009.2.2.1.3.1.1.5","INTEGER32","read-create","","MIRTH-MIB","""The number of messages this channel has sent."""
+"mirthConnectChannelErrored",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications.mirthConnect.mirthConnectChannelStatus.mirthConnectChannelStatsTable.mirthConnectChannelEntry.mirthConnectChannelErrored",".1.3.6.1.4.1.29009.2.2.1.3.1.1.6","INTEGER32","read-create","","MIRTH-MIB","""The number of messages this channel has errored."""
+"mirthConnectChannelConnectionState",".iso.org.dod.internet.private.enterprises.mirthcorporation.products.applications.mirthConnect.mirthConnectChannelStatus.mirthConnectChannelStatsTable.mirthConnectChannelEntry.mirthConnectChannelConnectionState",".1.3.6.1.4.1.29009.2.2.1.3.1.1.8","OCTET STRING","read-create","","MIRTH-MIB","""The connection state of the Mirth Connect channel."""
