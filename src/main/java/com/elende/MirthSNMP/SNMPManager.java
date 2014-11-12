@@ -24,27 +24,71 @@ import org.snmp4j.util.TableUtils;
 
     
 public class SNMPManager {
+   
 
-	
-    Snmp snmp = null;  // this is the SNMP session
+	public String getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+	public String getCommunity() {
+		return community;
+	}
+
+
+	public void setCommunity(String community) {
+		this.community = community;
+	}
+
+
+	public int getRetries() {
+		return retries;
+	}
+
+
+	public void setRetries(int retries) {
+		this.retries = retries;
+	}
+
+
+	public long getTimeout() {
+		return timeout;
+	}
+
+
+	public void setTimeout(long timeout) {
+		this.timeout = timeout;
+	}
+
+
+
+
+	Snmp snmp = null;  // this is the SNMP session
     String address = null;		//This is the IP address of the box we're querying
     String community ="public";
     int retries = 2;
     long timeout=1500;
+    
+    TransportMapping transport =null;
+    
 
     public SNMPManager(String add)
     {
-    	address = add;
+    	this.address = add;
      }
 
     
     public SNMPManager(String add,String comty, int rts, long tmo)
     {
-    	address = add;
-    	community = comty;
-    	retries =rts;
-    	timeout = tmo;
-    	
+    	this.address = add;
+    	this.community = comty;
+    	this.retries =rts;
+    	this.timeout = tmo;
     }
 
     
@@ -59,11 +103,26 @@ public class SNMPManager {
     */
     
     private void start() throws IOException {
-    		TransportMapping transport = new DefaultUdpTransportMapping();
+    		transport = new DefaultUdpTransportMapping();
     		snmp = new Snmp(transport);
     		// Do not forget this line!
     		transport.listen();
+    		System.out.println("Started");
     }
+    
+    
+    
+    
+    private void stop() throws IOException {
+    	
+    	transport.close();
+		snmp.close();
+    	System.out.println("Stopped");
+    	
+}
+    
+    
+    
 
     /**
     * Method which takes a single OID and returns the response from the agent as a String.
@@ -72,7 +131,13 @@ public class SNMPManager {
     * @throws IOException
     */
     public String getAsString(OID oid) throws IOException {
+ 
+       	System.out.println("Getting"+oid.toString());
+        
     	ResponseEvent event = getValue(new OID[] { oid });
+    	
+    	System.out.println(event.getResponse().toString());
+    	
     	return event.getResponse().get(0).getVariable().toString();
     }
 
@@ -155,12 +220,6 @@ public static void main(String[] args) throws IOException {
 	System.out.println(sysDescr);
 
 	//client.getifTable();
-
-	
-	
-	
-	
-	
 	
 /* Hook on to ifTable */
 
