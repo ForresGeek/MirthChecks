@@ -1,8 +1,11 @@
 package com.elende.MirthSNMP;
 
 import java.io.IOException;
+
 import java.util.List;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.snmp4j.CommunityTarget;
 import org.snmp4j.PDU;
 import org.snmp4j.Snmp;
@@ -25,6 +28,10 @@ import org.snmp4j.util.TableUtils;
     
 public class SNMPManager {
    
+	
+
+	public final Logger LOGGER =LogManager.getLogger("com.elende.MirthSNMP.SNMPManager");
+
 
 	public String getAddress() {
 		return address;
@@ -107,7 +114,7 @@ public class SNMPManager {
     		snmp = new Snmp(transport);
     		// Do not forget this line!
     		transport.listen();
-    		System.out.println("Started");
+    		LOGGER.debug("Started");
     }
     
     
@@ -117,7 +124,7 @@ public class SNMPManager {
     	
     	transport.close();
 		snmp.close();
-    	System.out.println("Stopped");
+    	LOGGER.debug("Stopped");
     	
 }
     
@@ -132,11 +139,11 @@ public class SNMPManager {
     */
     public String getAsString(OID oid) throws IOException {
  
-       	System.out.println("Getting"+oid.toString());
+    	LOGGER.debug("Getting"+oid.toString());
         
     	ResponseEvent event = getValue(new OID[] { oid });
     	
-    	System.out.println(event.getResponse().toString());
+    	LOGGER.debug(event.getResponse().toString());
     	
     	return event.getResponse().get(0).getVariable().toString();
     }
@@ -216,8 +223,8 @@ public static void main(String[] args) throws IOException {
 * OID - .1.3.6.1.2.1.1.5.0 => SysName
 * => MIB explorer will be usefull here, as discussed in previous article
 */
-	String sysDescr = client.getAsString(new OID(".1.3.6.1.2.1.1.1.0"));
-	System.out.println(sysDescr);
+	//String sysDescr = client.getAsString(new OID(".1.3.6.1.2.1.1.1.0"));
+	//LOGGER.debug(sysDescr);
 
 	//client.getifTable();
 	
